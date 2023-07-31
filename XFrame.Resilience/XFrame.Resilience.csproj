@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>net7.0</TargetFramework>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <PackageId>XFrame.Resilience</PackageId>
+	  <Version>7.0.0</Version>
+	  <Authors>Lwandile Mfundisi</Authors>
+	  <Description>XFrame.Resilience for enabling retry strategies incase of failure when perfoming an action</Description>
+	  <IsPackable>true</IsPackable>
+	  <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="XFrame.Common" Version="7.0.4" />
+    <PackageReference Include="XFrame.ValueObjects" Version="7.0.0" />
+  </ItemGroup>
+
+	<Target DependsOnTargets="ResolveReferences" Name="CopyProjectReferencesToPackage">
+		<ItemGroup>
+			<BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
+		</ItemGroup>
+	</Target>
+
+</Project>
