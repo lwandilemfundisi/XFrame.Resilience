@@ -13,8 +13,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XFrame.Common" Version="7.0.4" />
-    <PackageReference Include="XFrame.ValueObjects" Version="7.0.0" />
+    <PackageReference Include="XFrame.Common" Version="9.0.0" />
+    <PackageReference Include="XFrame.ValueObjects" Version="9.0.0" />
   </ItemGroup>
 
 	<Target DependsOnTargets="ResolveReferences" Name="CopyProjectReferencesToPackage">
